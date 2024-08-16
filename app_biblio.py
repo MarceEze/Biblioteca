@@ -12,3 +12,15 @@ from kivy.uix.screenmanager import Screen, ScreenManager
 from kivy.uix.behaviors import ButtonBehavior
 from kivy.uix.dropdown import DropDown
 from kivy.clock import Clock
+
+kivy.require('2.1.0')
+
+# Configuración de la ventana
+Window.size = (400, 600)
+Window.clearcolor = (1, 1, 1, 1)  # Fondo blanco
+
+class HoverBehavior(ButtonBehavior):
+    def __init__(self, **kwargs):
+        super(HoverBehavior, self).__init__(**kwargs)
+        self.bind(on_enter=self.on_enter)
+        self.bind(on_leave=self.on_leave)
