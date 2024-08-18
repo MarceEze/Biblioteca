@@ -24,4 +24,11 @@ class HoverBehavior(ButtonBehavior):
         super(HoverBehavior, self).__init__(**kwargs)
         self.bind(on_enter=self.on_enter)
         self.bind(on_leave=self.on_leave)
+
+    def on_enter(self, *args):
+        self.color = (0, 0, 1, 1)
+
+    def on_leave(self, *args):
+        self.color = (1, 1, 1, 1)
+
 # probando
